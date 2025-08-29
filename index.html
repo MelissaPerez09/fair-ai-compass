@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Resultados del Modelo de Recidivismo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      background: #f8f9fa;
+      color: #333;
+    }
+    h1, h2, h3 {
+      color: #2c3e50;
+    }
+    .metrics, .models, .bias, .graphs {
+      margin-bottom: 40px;
+    }
+    img {
+      max-width: 600px;
+      display: block;
+      margin: 20px 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    .graph-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .graph-gallery img {
+      max-width: 400px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Resultados del Modelo de Recidivismo</h1>
+  <p>Este informe presenta las métricas, resultados y visualizaciones obtenidas a partir del modelo de predicción de recidivismo.</p>
+
+  <div class="metrics">
+    <h2>Resumen de Datos</h2>
+    <ul>
+      <li><strong>Distribución por raza:</strong> African American (85.5%), Hispanic (8.2%), Other (5.5%), Asian (0.5%), Native American (0.2%).</li>
+      <li><strong>Distribución por género:</strong> Femenino (81%), Masculino (19%).</li>
+      <li><strong>Distribución por edad:</strong> 25-45 (57%), Menor de 25 (21.8%), Mayor de 45 (20.9%).</li>
+      <li><strong>Tasa global de recidivismo:</strong> 45.5%.</li>
+      <li><strong>Tamaño del conjunto de entrenamiento:</strong> 4320 instancias. <br>
+          <strong>Tamaño del conjunto de prueba:</strong> 1852 instancias.</li>
+    </ul>
+  </div>
+
+  <div class="models">
+    <h2>Resultados de Modelos</h2>
+    <h3>Regresión Logística</h3>
+    <p>Accuracy: 0.6825</p>
+    <img src="confusion_matrix.png" alt="Matriz de confusión (Regresión Logística)">
+    
+    <h3>Árbol de Decisión</h3>
+    <p>Accuracy: 0.6776</p>
+  </div>
+
+  <div class="bias">
+    <h2>Evaluación de Sesgo</h2>
+    <p>Se evaluó el rendimiento del modelo en función de género, edad y raza, observándose variaciones en precisión y recall, lo cual indica posibles sesgos en los datos y en las predicciones.</p>
+    <img src="heatmap_recividism_demographics.png" alt="Mapa de calor de recidivismo por demografía">
+  </div>
+
+  <div class="graphs">
+    <h2>Visualizaciones</h2>
+    <div class="graph-gallery">
+      <img src="race_distribution.png" alt="Distribución por raza">
+      <img src="gender_distribution.png" alt="Distribución por género">
+      <img src="age_distribution.png" alt="Distribución por edad">
+      <img src="target_distribution.png" alt="Distribución de variable objetivo">
+      <img src="recividism_by_race.png" alt="Recidivismo por raza">
+      <img src="recividism_by_gender.png" alt="Recidivismo por género">
+      <img src="recividism_by_age_group.png" alt="Recidivismo por edad">
+      <img src="barplot_recidivism_by_race.png" alt="Barras recidivismo por raza">
+      <img src="boxplot_priors_by_race.png" alt="Boxplot de priors por raza">
+      <img src="correlation_matrix.png" alt="Matriz de correlación">
+    </div>
+  </div>
+</body>
+</html>
