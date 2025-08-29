@@ -44,14 +44,23 @@
 
     <!-- Summary -->
     <div class="section">
-      <h2>Data Summary</h2>
-      <ul>
-        <li><b>Race distribution:</b> African American (85.5%), Hispanic (8.2%), Other (5.5%), Asian (0.5%), Native American (0.2%).</li>
-        <li><b>Gender distribution:</b> Female (81%), Male (19%).</li>
-        <li><b>Age distribution:</b> 25-45 (57%), Below 25 (21.8%), Above 45 (20.9%).</li>
-        <li><b>Overall recidivism rate:</b> 45.5%.</li>
-        <li><b>Training set size:</b> 4320 instances. <br> <b>Test set size:</b> 1852 instances.</li>
-      </ul>
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <h2 class="card-title mb-4">Data Summary</h2>
+          <div class="row">
+            <div class="col-md-6">
+              <p><b>Race distribution:</b><br>African American (85.5%), Hispanic (8.2%), Other (5.5%), Asian (0.5%), Native American (0.2%).</p>
+              <p><b>Gender distribution:</b><br>Female (81%), Male (19%).</p>
+              <p><b>Age distribution:</b><br>25-45 (57%), Below 25 (21.8%), Above 45 (20.9%).</p>
+            </div>
+            <div class="col-md-6">
+              <p><b>Overall recidivism rate:</b><br>45.5%</p>
+              <p><b>Training set size:</b><br>4320 instances</p>
+              <p><b>Test set size:</b><br>1852 instances</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- Models -->
@@ -66,6 +75,7 @@
         <div class="col-md-6">
           <h4>Decision Tree</h4>
           <p>Accuracy: <b>0.6776</b></p>
+          <img src="results/confusion_matrix_tree.png" alt="Confusion Matrix Decision Tree">
         </div>
       </div>
     </div>
