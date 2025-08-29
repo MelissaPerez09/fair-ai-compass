@@ -1,84 +1,107 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Resultados del Modelo de Recidivismo</title>
+  <title>Recidivism Model Results</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
     body {
-      font-family: Arial, sans-serif;
-      margin: 40px;
-      background: #f8f9fa;
-      color: #333;
+      background-color: #f8f9fa;
     }
-    h1, h2, h3 {
-      color: #2c3e50;
+    .hero {
+      background: #2c3e50;
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
     }
-    .metrics, .models, .bias, .graphs {
-      margin-bottom: 40px;
+    .hero h1 {
+      font-size: 2.8rem;
+      margin-bottom: 15px;
+    }
+    .section {
+      margin: 60px 0;
     }
     img {
-      max-width: 600px;
-      display: block;
-      margin: 20px 0;
-      border: 1px solid #ccc;
-      border-radius: 6px;
+      max-width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
-    .graph-gallery {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-    .graph-gallery img {
-      max-width: 400px;
+    .gallery img {
+      margin-bottom: 20px;
     }
   </style>
 </head>
 <body>
-  <h1>Resultados del Modelo de Recidivismo</h1>
-  <p>Este informe presenta las métricas, resultados y visualizaciones obtenidas a partir del modelo de predicción de recidivismo.</p>
-
-  <div class="metrics">
-    <h2>Resumen de Datos</h2>
-    <ul>
-      <li><strong>Distribución por raza:</strong> African American (85.5%), Hispanic (8.2%), Other (5.5%), Asian (0.5%), Native American (0.2%).</li>
-      <li><strong>Distribución por género:</strong> Femenino (81%), Masculino (19%).</li>
-      <li><strong>Distribución por edad:</strong> 25-45 (57%), Menor de 25 (21.8%), Mayor de 45 (20.9%).</li>
-      <li><strong>Tasa global de recidivismo:</strong> 45.5%.</li>
-      <li><strong>Tamaño del conjunto de entrenamiento:</strong> 4320 instancias. <br>
-          <strong>Tamaño del conjunto de prueba:</strong> 1852 instancias.</li>
-    </ul>
+  <!-- Header -->
+  <div class="hero">
+    <h1>Recidivism Prediction Model</h1>
+    <p class="lead">Exploring demographic distributions, model performance, and fairness evaluation</p>
   </div>
 
-  <div class="models">
-    <h2>Resultados de Modelos</h2>
-    <h3>Regresión Logística</h3>
-    <p>Accuracy: 0.6825</p>
-    <img src="results/confusion_matrix.png" alt="Matriz de confusión (Regresión Logística)">
-    
-    <h3>Árbol de Decisión</h3>
-    <p>Accuracy: 0.6776</p>
-  </div>
+  <div class="container">
 
-  <div class="bias">
-    <h2>Evaluación de Sesgo</h2>
-    <p>Se evaluó el rendimiento del modelo en función de género, edad y raza, observándose variaciones en precisión y recall, lo cual indica posibles sesgos en los datos y en las predicciones.</p>
-    <img src="results/heatmap_recividism_demographics.png" alt="Mapa de calor de recidivismo por demografía">
-  </div>
-
-  <div class="graphs">
-    <h2>Visualizaciones</h2>
-    <div class="graph-gallery">
-      <img src="results/race_distribution.png" alt="Distribución por raza">
-      <img src="results/gender_distribution.png" alt="Distribución por género">
-      <img src="results/age_distribution.png" alt="Distribución por edad">
-      <img src="results/target_distribution.png" alt="Distribución de variable objetivo">
-      <img src="results/recividism_by_race.png" alt="Recidivismo por raza">
-      <img src="results/recividism_by_gender.png" alt="Recidivismo por género">
-      <img src="results/recividism_by_age_group.png" alt="Recidivismo por edad">
-      <img src="results/barplot_recidivism_by_race.png" alt="Barras recidivismo por raza">
-      <img src="results/boxplot_priors_by_race.png" alt="Boxplot de priors por raza">
-      <img src="results/correlation_matrix.png" alt="Matriz de correlación">
+    <!-- Summary -->
+    <div class="section">
+      <h2>Data Summary</h2>
+      <ul>
+        <li><b>Race distribution:</b> African American (85.5%), Hispanic (8.2%), Other (5.5%), Asian (0.5%), Native American (0.2%).</li>
+        <li><b>Gender distribution:</b> Female (81%), Male (19%).</li>
+        <li><b>Age distribution:</b> 25-45 (57%), Below 25 (21.8%), Above 45 (20.9%).</li>
+        <li><b>Overall recidivism rate:</b> 45.5%.</li>
+        <li><b>Training set size:</b> 4320 instances. <br> <b>Test set size:</b> 1852 instances.</li>
+      </ul>
     </div>
+
+    <!-- Models -->
+    <div class="section">
+      <h2>Model Performance</h2>
+      <div class="row">
+        <div class="col-md-6">
+          <h4>Logistic Regression</h4>
+          <p>Accuracy: <b>0.6825</b></p>
+          <img src="results/confusion_matrix.png" alt="Confusion Matrix Logistic Regression">
+        </div>
+        <div class="col-md-6">
+          <h4>Decision Tree</h4>
+          <p>Accuracy: <b>0.6776</b></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bias -->
+    <div class="section">
+      <h2>Bias and Fairness Evaluation</h2>
+      <p>The model's performance was analyzed across gender, age, and race. Differences in precision and recall reveal disparities that highlight potential fairness concerns.</p>
+      <img src="results/heatmap_recividism_demographics.png" alt="Recidivism Heatmap by Demographics">
+    </div>
+
+    <!-- Graphs -->
+    <div class="section">
+      <h2>Visualizations</h2>
+      <div class="row gallery">
+        <div class="col-md-6 col-lg-4"><img src="results/race_distribution.png" alt="Race Distribution"></div>
+        <div class="col-md-6 col-lg-4"><img src="results/gender_distribution.png" alt="Gender Distribution"></div>
+        <div class="col-md-6 col-lg-4"><img src="results/age_distribution.png" alt="Age Distribution"></div>
+        <div class="col-md-6 col-lg-4"><img src="results/target_distribution.png" alt="Target Distribution"></div>
+        <div class="col-md-6 col-lg-4"><img src="results/recividism_by_race.png" alt="Recidivism by Race"></div>
+        <div class="col-md-6 col-lg-4"><img src="results/recividism_by_gender.png" alt="Recidivism by Gender"></div>
+        <div class="col-md-6 col-lg-4"><img src="results/recividism_by_age_group.png" alt="Recidivism by Age"></div>
+        <div class="col-md-6 col-lg-4"><img src="results/barplot_recidivism_by_race.png" alt="Barplot Recidivism by Race"></div>
+        <div class="col-md-6 col-lg-4"><img src="results/boxplot_priors_by_race.png" alt="Boxplot Priors by Race"></div>
+        <div class="col-md-6 col-lg-4"><img src="results/correlation_matrix.png" alt="Correlation Matrix"></div>
+      </div>
+    </div>
+
   </div>
+
+  <!-- Footer -->
+  <footer class="text-center py-4 bg-light">
+    <p>© 2025 Recidivism Study | Built with GitHub Pages & Bootstrap</p>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
